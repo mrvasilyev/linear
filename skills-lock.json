@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "skills": {
+    "create-pr": {
+      "source": "n8n-io/n8n",
+      "sourceType": "github",
+      "computedHash": "0c808831227fce10c896d29f1cfa6258e819fb4a3dd093466783625b7f08249d"
+    },
+    "discovery-interview": {
+      "source": "parcadei/Continuous-Claude-v3",
+      "sourceType": "github",
+      "computedHash": "6f194cd10649bdcb62823f0ae3c43070dad725af451e9de8cc6a9b1404b98656"
+    },
+    "linear-issue": {
+      "source": "n8n-io/n8n",
+      "sourceType": "github",
+      "computedHash": "1727881ea103694398cf1c5016f426a99c78e6133827bab8321d3e1fd16ad7c0"
+    }
+  }
+}
