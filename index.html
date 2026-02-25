@@ -97,16 +97,17 @@
         }
 
         .ascii-banner pre {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: clamp(5px, 1.3vw, 14px);
-            line-height: 1.15;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            font-size: clamp(6px, 1.3vw, 14px);
+            line-height: 1.0;
+            letter-spacing: 0.05em;
             background: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             white-space: pre;
             text-align: center;
-            filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.4));
+            overflow: hidden;
         }
 
         @keyframes fadeIn {
