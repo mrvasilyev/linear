@@ -4,43 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D-T-A | Digital Technology Architecture</title>
-    <meta name="description" content="Digital Technology Architecture — Engineering the future of connected systems.">
+    <title>DUMMYWORLD</title>
+    <meta name="description" content="DUMMYWORLD — dummy.d-t-a.ae">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: #0a0a0f;
+            color: #f0f0f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .noise {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: 0;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+            top: -200px;
+            right: -100px;
+            opacity: 0.4;
+        }
+
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+            bottom: -150px;
+            left: -100px;
+            opacity: 0.4;
+            animation-delay: -7s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(30px, -40px) scale(1.05);
+            }
+
+            50% {
+                transform: translate(-20px, 20px) scale(0.95);
+            }
+
+            75% {
+                transform: translate(40px, 30px) scale(1.02);
+            }
+        }
+
+        .ascii-banner {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.2s ease-out;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .ascii-banner pre {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(5px, 1.3vw, 14px);
+            line-height: 1.15;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            white-space: pre;
+            text-align: center;
+            filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.4));
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="noise"></div>
-    <div class="gradient-orb orb-1"></div>
-    <div class="gradient-orb orb-2"></div>
-    <div class="gradient-orb orb-3"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
 
-    <nav class="navbar">
-        <div class="nav-brand">
-            <span class="brand-icon">◆</span>
-            <span class="brand-text">D-T-A</span>
-        </div>
-        <div class="nav-links">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#contact" class="nav-link nav-link--cta">Contact</a>
-        </div>
-    </nav>
-
-    <main>
-        <section class="hero" id="hero">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    <span class="badge-text">Coming Soon</span>
-                </div>
-                <div class="ascii-banner select-none" aria-label="DUMMYWORLD">
-                    <pre>
+    <div class="ascii-banner" aria-label="DUMMYWORLD">
+        <pre>
  ██████╗ ██╗   ██╗███╗   ███╗███╗   ███╗██╗   ██╗
  ██╔══██╗██║   ██║████╗ ████║████╗ ████║╚██╗ ██╔╝
  ██║  ██║██║   ██║██╔████╔██║██╔████╔██║ ╚████╔╝
@@ -55,141 +144,7 @@
  ╚███╔███╔╝╚██████╔╝██║  ██║███████╗██████╔╝
   ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝
 </pre>
-                </div>
-                <p class="hero-subtitle">
-                    Engineering the future of connected systems.
-                    We design, build, and scale digital infrastructure
-                    that drives innovation.
-                </p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn--primary">
-                        Get in Touch
-                        <span class="btn-arrow">→</span>
-                    </a>
-                    <a href="#about" class="btn btn--ghost">
-                        Learn More
-                    </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number" data-target="150">0</span><span class="stat-suffix">+</span>
-                        <span class="stat-label">Projects Delivered</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="99">0</span><span class="stat-suffix">.9%</span>
-                        <span class="stat-label">Uptime SLA</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="24">0</span><span class="stat-suffix">/7</span>
-                        <span class="stat-label">Support</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="grid-container">
-                    <div class="grid-line" style="--i:0"></div>
-                    <div class="grid-line" style="--i:1"></div>
-                    <div class="grid-line" style="--i:2"></div>
-                    <div class="grid-line" style="--i:3"></div>
-                    <div class="grid-line" style="--i:4"></div>
-                    <div class="grid-line" style="--i:5"></div>
-                    <div class="grid-line" style="--i:6"></div>
-                    <div class="grid-line grid-line--h" style="--i:0"></div>
-                    <div class="grid-line grid-line--h" style="--i:1"></div>
-                    <div class="grid-line grid-line--h" style="--i:2"></div>
-                    <div class="grid-line grid-line--h" style="--i:3"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="services" id="services">
-            <div class="section-header">
-                <span class="section-tag">What We Do</span>
-                <h2 class="section-title">Services</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3 class="service-title">Cloud Architecture</h3>
-                    <p class="service-desc">Multi-cloud infrastructure design with AWS, GCP, and Azure. Scalable,
-                        resilient, cost-optimized.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔒</div>
-                    <h3 class="service-title">Security & Compliance</h3>
-                    <p class="service-desc">Zero-trust networking, identity management, and regulatory compliance across
-                        MENA and EU frameworks.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3 class="service-title">DevOps & Automation</h3>
-                    <p class="service-desc">CI/CD pipelines, infrastructure as code, and intelligent monitoring for
-                        continuous delivery.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3 class="service-title">Data Engineering</h3>
-                    <p class="service-desc">Real-time analytics pipelines, data warehousing, and business intelligence
-                        at scale.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="about" id="about">
-            <div class="about-content">
-                <span class="section-tag">About</span>
-                <h2 class="section-title">Built for the Future</h2>
-                <p class="about-text">
-                    D-T-A is a digital technology consultancy based in the UAE.
-                    We partner with enterprises and startups to architect
-                    systems that are resilient, scalable, and beautifully engineered.
-                </p>
-                <div class="about-features">
-                    <div class="feature">
-                        <span class="feature-check">✓</span>
-                        <span>UAE-based operations</span>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-check">✓</span>
-                        <span>Enterprise-grade solutions</span>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-check">✓</span>
-                        <span>24/7 managed services</span>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-check">✓</span>
-                        <span>Multi-cloud expertise</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <div class="contact-card">
-                <h2 class="contact-title">Let's Build Together</h2>
-                <p class="contact-subtitle">Ready to transform your digital infrastructure?</p>
-                <a href="mailto:hello@d-t-a.ae" class="btn btn--primary btn--large">
-                    hello@d-t-a.ae
-                    <span class="btn-arrow">→</span>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <span class="brand-icon">◆</span>
-                <span>D-T-A</span>
-            </div>
-            <p class="footer-copy">© 2026 Digital Technology Architecture. UAE.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    </div>
 </body>
 
 </html>
